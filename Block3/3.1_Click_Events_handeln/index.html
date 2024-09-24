@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zähler und interaktives Div</title>
+    <style>
+      #ballContainer {
+        width: 300px;
+        height: 200px;
+        background-color: green;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid black;
+      }
+      #ball {
+        width: 50px; /* Größe des Balls */
+        height: 50px;
+        background-image: url("/soccer-ball-svgrepo-com.svg"); /* Ersetze diesen Pfad durch den tatsächlichen Bildpfad */
+        background-size: cover;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Klick mi mol du dumme</button>
+    <!-- Zähler 1 -->
+    <h1 id="counter1">0</h1>
+    <button id="button1">Zähler 1 erhöhen</button>
+
+    <!-- Zähler 2 -->
+    <h1 id="counter2">0</h1>
+    <button id="button2">Zähler 2 erhöhen</button>
+
+    <!-- Div mit Ball -->
+    <div id="ballContainer">
+      <div id="ball"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+  </body>
+</html>

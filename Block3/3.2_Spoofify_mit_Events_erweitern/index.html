@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uek</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a><h1>Spoofify</h1></a>
+      <div class="whiteButton">
+        <a href="">Top of your birthweek</a>
+        <a href="">Latest releases randomized</a>
+      </div>
+    </div>
+    <h1 class="bold">Your spoofed overview</h1>
+    <p>
+      Welcome to Spoofify, the
+      <i>rip-off music streaming service</i> of ICT Module 291!
+    </p>
+    <h2>Top of your birthweek</h2>
+    <ol>
+      <li><b>Kawaii Sprite</b> FNF Vol. 01</li>
+      <li><b>Kawaii Sprite</b> FNF Vol.02</li>
+      <li><b>Kawaii Sprite</b> FNF Vol.03</li>
+      <li><b>Gordon</b> Doom</li>
+      <li><b>Akira Toriyama</b> DBZ</li>
+    </ol>
+
+    <h2>Latest releases randomized</h2>
+    <button id="more">Add three more</button>
+    <button id="less">Remove first three</button>
+    <div class="album-grid">
+      <img
+        class="album-cover"
+        src="/pics/album1.jpg"
+        alt=""
+        onclick="showTracklist('FNF Vol. 01')"
+      />
+      <img
+        class="album-cover"
+        src="/pics/album2.jpg"
+        alt=""
+        onclick="showTracklist('FNF Vol. 02')"
+      />
+      <img
+        class="album-cover"
+        src="/pics/album3.jpg"
+        alt=""
+        onclick="showTracklist('FNF Vol. 03')"
+      />
+      <img
+        class="album-cover"
+        src="/pics/album4.jpg"
+        alt=""
+        onclick="showTracklist('Doom')"
+      />
+      <img
+        class="album-cover"
+        src="/pics/album5.jpg"
+        alt=""
+        onclick="showTracklist('DBZ')"
+      />
+      <img
+        class="album-cover"
+        src="/pics/album6.jpg"
+        alt=""
+        onclick="showTracklist('DBZ')"
+      />
+    </div>
+
+    <div id="tracklist" class="tracklist"></div>
+    <div id="player" class="player">
+      <p id="current-song">Currently playing:</p>
+    </div>
+
+    <div class="footer">
+      <footer>
+        <p>&copy; 2023 Spooky Example, Inc.</p>
+      </footer>
+    </div>
+  </body>
+</html>
