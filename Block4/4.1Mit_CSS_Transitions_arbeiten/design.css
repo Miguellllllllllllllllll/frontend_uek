@@ -1,0 +1,15 @@
+/* Stil für das Quadrat */
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: relative;
+  transition: background-color 1s ease, width 2s ease, transform 2s ease;
+}
+
+/* Endwerte für die Animation */
+#box.animate {
+  background-color: red;
+  width: 200px;
+  transform: translateX(200px) rotate(45deg);
+}

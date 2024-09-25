@@ -372,3 +372,171 @@ document.addEventListener("DOMContentLoaded", () => {
 // hier dein code
 });
 ```
+
+## Animns
+
+html:
+
+```
+ <!-- Quadrat-Element -->
+    <div id="box"></div>
+
+    <!-- Button -->
+    <button id="toggleButton">Animieren</button>
+```
+
+css:
+
+```
+/* Stil für das Quadrat */
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  position: relative;
+  transition: background-color 1s ease, width 2s ease, transform 2s ease;
+}
+
+/* Endwerte für die Animation */
+#box.animate {
+  background-color: red;
+  width: 200px;
+  transform: translateX(200px) rotate(45deg);
+}
+```
+
+js:
+
+```
+window.addEventListener("load", (event) => {
+  // JavaScript, um die Animation zu starten oder zurückzusetzen
+  document
+    .getElementById("toggleButton")
+    .addEventListener("click", function () {
+      var box = document.getElementById("box");
+      box.classList.toggle("animate");
+    });
+});
+```
+
+### Scroll animation
+
+html:
+
+```<section class="hidden">
+      <h2>Sektion 1</h2>
+      <p>Diese Sektion erscheint, wenn du hierhin scrollst.</p>
+    </section>
+```
+
+css:
+
+```
+/* Basis-Stile */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+section {
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  opacity: 0; /* Sektionen sind am Anfang unsichtbar */
+  transform: translateY(50px); /* Anfangsposition */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Klasse, die hinzugefügt wird, wenn die Sektion sichtbar ist */
+section.visible {
+  opacity: 1;
+  transform: translateY(0); /* Endposition, wenn sichtbar */
+}
+```
+
+js:
+
+```
+window.addEventListener("load", (event) => {
+  // Alle Sektionen auswählen, die beobachtet werden sollen
+  const sections = document.querySelectorAll("section");
+
+  // IntersectionObserver-Callback-Funktion
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Wenn die Sektion sichtbar ist, füge die Klasse 'visible' hinzu
+          entry.target.classList.add("visible");
+          // Optional: Sobald die Sektion sichtbar ist, hört der Observer auf, sie zu beobachten
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  ); // Schwellenwert: 10% der Sektion müssen sichtbar sein
+
+  // Jede Sektion dem Observer hinzufügen
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+});
+```
+
+### smiley zeichnen
+
+html:
+
+```
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Smiley</title>
+    <style>
+      /* Stil für das SVG-Element */
+      svg {
+        display: block;
+        margin: 50px auto;
+        background-color: #f0f0f0;
+      }
+      /* Optional: Anpassung der Farben */
+      circle {
+        stroke: black;
+        stroke-width: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SVG Smiley</h1>
+
+    <!-- SVG-Element für den Smiley -->
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Kopf des Smileys -->
+      <circle cx="100" cy="100" r="80" fill="yellow" stroke="black" />
+
+      <!-- Linkes Auge -->
+      <circle cx="70" cy="70" r="10" fill="black" />
+
+      <!-- Rechtes Auge -->
+      <circle cx="130" cy="70" r="10" fill="black" />
+
+      <!-- Mund mit path -->
+      <path
+        d="M 60 120 Q 100 160, 140 120"
+        fill="transparent"
+        stroke="black"
+        stroke-width="5"
+      />
+    </svg>
+  </body>
+</html>
+
+```
+
+function init() {
+document.getElementById("about").style.color = 'blue';
+}

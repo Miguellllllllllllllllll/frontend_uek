@@ -1,0 +1,46 @@
+/* Stellt sicher, dass Flexbox verwendet wird */
+#destinations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+#destinations li {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Hebt das ausgewählte Land hervor */
+.highlight {
+  background-color: #ffd700;
+  border: 2px solid #ff8c00;
+}
+
+/* Ansprechendes Seitenlayout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}

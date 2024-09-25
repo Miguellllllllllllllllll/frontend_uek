@@ -1,0 +1,13 @@
+canvas {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: #cfdcc3; /* Optional: Hintergrundfarbe für das Canvas */
+}
+
+@font-face {
+  font-family: "7Segment";
+  src: url("/Block4/4.5Ein_Bild_zum_Leben_erwecken/7segments.ttf")
+    format("truetype");
+}

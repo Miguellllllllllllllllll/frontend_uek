@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.rating {
+  display: flex; /* Normale Reihenfolge von links nach rechts */
+}
+
+.star {
+  font-size: 50px;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: gold;
+}
+
+.star.selected {
+  color: gold;
+}
