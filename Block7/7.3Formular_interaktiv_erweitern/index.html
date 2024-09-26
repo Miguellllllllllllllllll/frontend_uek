@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formular mit Assistenzfunktion</title>
+    <script src="script.js" defer></script>
+    <!-- Verlinkung zur externen JavaScript-Datei -->
+  </head>
+  <body>
+    <h1>Benutzerinformationen</h1>
+    <form id="user-form">
+      <label for="first-name">Vorname:</label>
+      <input type="text" id="first-name" required />
+
+      <label for="last-name">Nachname:</label>
+      <input type="text" id="last-name" required />
+
+      <label for="street">Straße:</label>
+      <input type="text" id="street" required />
+
+      <label for="postal-code">Postleitzahl:</label>
+      <input type="text" id="postal-code" required />
+
+      <label for="city">Ort:</label>
+      <input type="text" id="city" readonly />
+      <!-- Nur Lesen, da es automatisch gefüllt wird -->
+
+      <button type="submit">Absenden</button>
+    </form>
+  </body>
+</html>

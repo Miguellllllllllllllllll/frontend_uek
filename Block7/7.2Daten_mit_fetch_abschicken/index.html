@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch JSON und als HTML anzeigen</title>
+  </head>
+  <body>
+    <h1>Create a Post yourself:</h1>
+    <form id="post-form">
+      <!-- Vorname und Nachname -->
+      <label for="firstname">Vorname:</label>
+      <input type="text" id="firstname" name="firstname" required />
+
+      <label for="lastname">Nachname:</label>
+      <input type="text" id="lastname" name="lastname" required />
+
+      <label for="email">E-Mail Adresse:</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        minlength="1"
+        maxlength="80"
+        id="title"
+        name="title"
+        required
+      />
+
+      <label for="body">Text:</label>
+      <textarea
+        minlength="1"
+        maxlength="500"
+        id="body"
+        name="body"
+        required
+      ></textarea>
+
+      <!-- Absenden -->
+      <input type="submit" value="Post erstellen" />
+    </form>
+
+    <h1>Posts</h1>
+    <ul id="posts-list"></ul>
+    <!-- Hier werden die Posts eingefügt -->
+
+    <!-- Verlinkung zur externen JavaScript-Datei -->
+    <script src="script.js"></script>
+  </body>
+</html>
