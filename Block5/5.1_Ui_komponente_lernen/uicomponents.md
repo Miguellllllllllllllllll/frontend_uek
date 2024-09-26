@@ -22,7 +22,7 @@
 
 ## 6. **Tree**
 
-Ein **Tree** im UI-Element ist eine hierarchische Darstellung von Daten, die es Benutzern ermöglicht, Informationen strukturiert zu durchsuchen und zu organisieren.
+Ein Tree im UI-Element ist eine hierarchische Darstellung von Daten, die es Benutzern ermöglicht, Informationen strukturiert zu durchsuchen und zu organisieren.
 
 ## 7. **Form (Formular)**
 

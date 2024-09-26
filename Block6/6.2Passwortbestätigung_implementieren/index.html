@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passwort Validierung</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        border: 2px solid gray;
+        border-radius: 5px;
+      }
+      input[type="password"]:invalid {
+        border-color: red;
+      }
+      input[type="password"]:valid {
+        border-color: green;
+      }
+      input[type="submit"] {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error-message {
+        color: red;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Passwort-Validierung</h1>
+    <form id="passwordForm" novalidate>
+      <label for="password1">Passwort eingeben:</label>
+      <input
+        type="password"
+        id="password1"
+        name="password1"
+        required
+        minlength="8"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Das Passwort muss mindestens 8 Zeichen, eine Zahl, einen Großbuchstaben und einen Kleinbuchstaben enthalten."
+      />
+      <div id="password1Error" class="error-message">
+        <ul>
+          <li>Das Passwort muss mindestens 8 Zeichen</li>
+          <li>Eine Zahl</li>
+          <li>einen Großbuchstaben</li>
+          <li>einen Kleinbuchstaben enthalten</li>
+        </ul>
+      </div>
+
+      <label for="password2">Passwort bestätigen:</label>
+      <input type="password" id="password2" name="password2" required />
+      <div id="password2Error" class="error-message">
+        Die Passwörter stimmen nicht überein.
+      </div>
+
+      <input type="submit" value="Registrieren" />
+    </form>
+
+    <script>
+      // Variablen für Formular und Eingabefelder definieren
+      const passwordForm = document.getElementById("passwordForm");
+      const password1 = document.getElementById("password1");
+      const password2 = document.getElementById("password2");
+      const password1Error = document.getElementById("password1Error");
+      const password2Error = document.getElementById("password2Error");
+
+      // Formular-Ereignislistener beim Absenden
+      passwordForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Verhindert das Neuladen der Seite
+
+        let isValid = true; // Variable zur Überprüfung, ob das Formular korrekt ist
+
+        // 1. Überprüfung von Passwort 1 (Anforderungen: Muster und Länge)
+        if (!password1.checkValidity()) {
+          password1Error.style.display = "block"; // Zeige Fehlermeldung
+          isValid = false;
+        } else {
+          password1Error.style.display = "none"; // Verberge Fehlermeldung
+        }
+
+        // 2. Überprüfung, ob Passwort 1 und Passwort 2 übereinstimmen
+        if (password1.value !== password2.value) {
+          password2Error.style.display = "block"; // Zeige Fehlermeldung
+          isValid = false;
+        } else {
+          password2Error.style.display = "none"; // Verberge Fehlermeldung
+        }
+
+        // 3. Wenn alle Validierungen erfolgreich sind, dann Formular absenden
+        if (isValid) {
+          alert("Passwort erfolgreich registriert!"); // Erfolgsmeldung
+          passwordForm.submit(); // Formular absenden
+          password1Error.style.display = "hidden";
+        }
+      });
+    </script>
+  </body>
+</html>

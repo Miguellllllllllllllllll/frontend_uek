@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/Block6/6.1Einfache_Formulare/1.7_einfachesjavascript2/random.js"></script>
+    <title>Zahlenraten Spiel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      input[type="number"] {
+        padding: 5px;
+        font-size: 14px;
+        width: 100px;
+      }
+      input[type="submit"] {
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      #output {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        color: blue;
+      }
+      #attempts {
+        margin-top: 10px;
+        font-size: 16px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="guessForm">
+      <label for="guess">Rate eine Zahl von 1 bis 100:</label>
+      <input type="number" id="guess" name="guess" min="1" max="100" required />
+      <input type="submit" value="Rate!" />
+    </form>
+
+    <div id="output"></div>
+    <div id="attempts"></div>
+    <!-- Neues Element zur Anzeige der Versuche -->
+
+    <script src="/random.js"></script>
+    <!-- Überprüfe, ob der Pfad korrekt ist -->
+  </body>
+</html>

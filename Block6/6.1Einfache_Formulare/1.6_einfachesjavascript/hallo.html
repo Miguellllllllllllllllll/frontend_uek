@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Begrüßung basierend auf Tageszeit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        font-size: 14px;
+      }
+      input[type="submit"] {
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      #greeting {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="greetingForm">
+      <label for="name">Wie heißt du?</label>
+      <input type="text" id="name" name="name" required />
+      <input type="submit" value="Begrüßung anzeigen" />
+    </form>
+
+    <div id="greeting"></div>
+
+    <script src="hallo.js"></script>
+  </body>
+</html>
