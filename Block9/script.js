@@ -49,6 +49,7 @@ function createTask() {
     .then((response) => response.json())
     .then((data) => {
       console.log(`Task created successfully with id: ${data.id}`);
+      location.reload();
     })
     .catch((error) => {
       console.error("Fehler beim Erstellen der Aufgabe:", error);
@@ -56,22 +57,20 @@ function createTask() {
 }
 
 function deleteTask(taskId) {
-  const deleteURL = `http://localhost/tasks/${taskId}`; // Verwende Template-Strings
-
+  const deleteURL = `http://localhost/task/${taskId}`; // Korrekte Verwendung von Template-Literals
   fetch(deleteURL, {
     method: "DELETE",
   })
     .then((response) => {
       if (response.ok) {
-        console.log("Task erfolgreich gelöscht");
-        window.location.reload(); // Seite neu laden
+        console.log(`Task mit ID ${taskId} erfolgreich gelöscht.`);
+        location.reload();
       } else {
         console.error("Fehler beim Löschen:", response.statusText);
       }
     })
-    .catch((error) => {
-      console.error("Netzwerkfehler:", error);
-    });
+    .catch((error) => console.error("Netzwerkfehler:", error));
+  window.reload();
 }
 
 function updateTask(taskId) {
